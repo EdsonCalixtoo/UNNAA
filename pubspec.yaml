@@ -1,0 +1,49 @@
+name: UNNA
+description: social app
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  cupertino_icons: ^0.1.2
+  image_picker: ^0.6.6+1
+  flutter_launcher_icons: ^0.7.5 
+  dio: ^3.0.9
+  brasil_fields: ^0.1.0
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/icone.jpg"
+
+flutter:
+
+
+  uses-material-design: true
+
+  assets:
+   - assets/images/
+   - assets/icons/
+
+
+
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
+        - asset: assets/fonts/Poppins-Medium.ttf
+          weight: 600
+        - asset: assets/fonts/Poppins-Bold.ttf
+          weight: 700
