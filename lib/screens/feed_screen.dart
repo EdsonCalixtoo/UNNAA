@@ -3,6 +3,7 @@ import 'package:UNNA/screens/filter_screen.dart';
 import 'package:UNNA/screens/inserir_anuncio.dart';
 import 'package:UNNA/screens/view_post_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class FeedScreen extends StatefulWidget {
   @override
@@ -10,6 +11,15 @@ class FeedScreen extends StatefulWidget {
 }
 
 class _FeedScreenState extends State<FeedScreen> {
+  @override
+  void didChangeDependencies() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    String client = prefs.getString('client');
+    print('feed => ${client}');
+    super.didChangeDependencies();
+  }
+
   Widget _buildPost(int index) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
@@ -171,29 +181,28 @@ class _FeedScreenState extends State<FeedScreen> {
         elevation: 13,
         title: Text('UNNA'),
         leading: GestureDetector(
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => FilterScreen()));
-            },
-            child: Icon(
-              Icons.category,
-              size: 27.0,
-              color: Colors.white,
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => FilterScreen()));
+          },
+          child: Icon(
+            Icons.category,
+            size: 27.0,
+            color: Colors.white,
+          ),
+        ),
+        actions: <Widget>[
+          Padding(
+            padding: EdgeInsets.only(right: 20.0),
+            child: GestureDetector(
+              onTap: () {},
+              child: Icon(
+                Icons.local_hospital,
+                size: 26.0,
+              ),
             ),
-            ),
-            actions: <Widget>[
-              Padding(
-                padding: EdgeInsets.only(right: 20.0),
-                child: GestureDetector(
-                  onTap: () {
-                  },
-                  child: Icon(
-                    Icons.local_hospital,
-                    size: 26.0,
-                  ),
-                ),
-              )
-            ],
+          )
+        ],
       ),
       backgroundColor: Color(0xFFEDF0F6),
       body: ListView(
@@ -246,8 +255,8 @@ class _FeedScreenState extends State<FeedScreen> {
           _buildPost(0),
           _buildPost(1),
         ],
-      ),   
-      bottomNavigationBar: ClipRRect(      
+      ),
+      bottomNavigationBar: ClipRRect(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(30.0),
           topRight: Radius.circular(30.0),
@@ -273,7 +282,10 @@ class _FeedScreenState extends State<FeedScreen> {
             ),
             BottomNavigationBarItem(
               icon: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 10.0,),
+                padding: EdgeInsets.symmetric(
+                  horizontal: 5.0,
+                  vertical: 10.0,
+                ),
                 child: FlatButton(
                   padding: EdgeInsets.symmetric(vertical: 10.0),
                   shape: RoundedRectangleBorder(
@@ -282,11 +294,9 @@ class _FeedScreenState extends State<FeedScreen> {
                   color: Colors.blue,
                   onPressed: () {
                     Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => CreateScreen()
-                          )
-                      );
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => CreateScreen()));
                   },
                   child: Icon(
                     Icons.add,

@@ -3,6 +3,7 @@ import 'package:UNNA/screens/feed_screen.dart';
 import 'package:UNNA/util/util.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../Login.dart';
 
@@ -10,6 +11,7 @@ class ClientService {
   Dio dio = new Dio();
 
   Future<ClientModel> auth(ClientModel client, BuildContext context) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
     Response response = await dio.post(
       '${apiUrl}/auth',
       data: client.toJson(),
@@ -20,6 +22,7 @@ class ClientService {
           }),
     );
     if (response.statusCode == 200) {
+      prefs.setString('client', response.data['data'].toString());
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => FeedScreen()));
     } else if (response.statusCode == 400) {
