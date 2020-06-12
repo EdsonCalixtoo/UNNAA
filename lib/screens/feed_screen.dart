@@ -186,13 +186,13 @@ class _FeedScreenState extends State<FeedScreen> {
                 MaterialPageRoute(builder: (context) => FilterScreen()));
           },
           child: Icon(
-            Icons.category,
+            Icons.find_in_page,
             size: 27.0,
             color: Colors.white,
           ),
         ),
         actions: <Widget>[
-          Padding(
+          /*Padding(
             padding: EdgeInsets.only(right: 20.0),
             child: GestureDetector(
               onTap: () {},
@@ -201,7 +201,7 @@ class _FeedScreenState extends State<FeedScreen> {
                 size: 26.0,
               ),
             ),
-          )
+          )*/
         ],
       ),
       backgroundColor: Color(0xFFEDF0F6),
@@ -214,7 +214,7 @@ class _FeedScreenState extends State<FeedScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
             ),
           ),
-          Container(
+          /*Container(
             width: double.infinity,
             height: 100.0,
             child: ListView.builder(
@@ -224,7 +224,7 @@ class _FeedScreenState extends State<FeedScreen> {
                 if (index == 0) {
                   return SizedBox(width: 10.0);
                 }
-                return Container(
+               return Container(
                   margin: EdgeInsets.all(10.0),
                   width: 60.0,
                   height: 60.0,
@@ -251,7 +251,7 @@ class _FeedScreenState extends State<FeedScreen> {
                 );
               },
             ),
-          ),
+          )*/
           _buildPost(0),
           _buildPost(1),
         ],
