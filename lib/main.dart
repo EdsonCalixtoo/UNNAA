@@ -1,4 +1,5 @@
-import 'package:UNNA/Login.dart';
+
+import 'package:UNNA/screens/Login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -6,9 +7,9 @@ import 'package:flutter/services.dart';
 void main() {
 
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    statusBarColor: Colors.blue,
-    statusBarIconBrightness: Brightness.light,
-    statusBarBrightness: Brightness.light
+    statusBarColor: Colors.black,
+    statusBarIconBrightness: Brightness.dark,
+    statusBarBrightness: Brightness.dark
   ));
 
 
@@ -20,7 +21,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        scaffoldBackgroundColor: Color(0XFF2C2B4B),
         primarySwatch: Colors.blue,
         fontFamily: "Poppins"
       ),

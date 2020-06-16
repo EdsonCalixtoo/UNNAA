@@ -11,7 +11,7 @@ class _CadastroState extends State<Cadastro> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Cadastro"),
+        title: Text("Cadastre-se!"),
       ),
       body: Container(
         decoration: BoxDecoration(color: Colors.white),

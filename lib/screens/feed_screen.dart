@@ -10,6 +10,14 @@ class FeedScreen extends StatefulWidget {
 }
 
 class _FeedScreenState extends State<FeedScreen> {
+
+  int _selectedPage = 0;
+    final _pageOptions = [
+      Text('item'),
+      Text('item2'),
+      Text('item3'),
+    ];
+
   Widget _buildPost(int index) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
@@ -254,6 +262,12 @@ class _FeedScreenState extends State<FeedScreen> {
         ),
         child: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
+          currentIndex: _selectedPage,
+          onTap: (int index){
+            setState(() {
+              _selectedPage = index;
+            });
+          },
           items: [
             BottomNavigationBarItem(
               icon: Icon(

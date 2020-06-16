@@ -1,4 +1,5 @@
 import 'package:UNNA/Api/api_postcode.dart';
+import 'package:UNNA/models/ad.dart';
 import 'package:UNNA/screens/cep_field.dart';
 import 'package:UNNA/widgets/images_field.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +12,12 @@ class CreateScreen extends StatefulWidget {
 
 class _CreateScreenState extends State<CreateScreen> {
   
+  
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
+  
+  
+  Ad ad;
+  
   
   @override
   Widget build(BuildContext context) {
@@ -25,7 +31,7 @@ class _CreateScreenState extends State<CreateScreen> {
         child: ListView(
           children: <Widget>[
             ImagesField(
-
+              
             ),
             TextFormField(
               decoration: InputDecoration(
