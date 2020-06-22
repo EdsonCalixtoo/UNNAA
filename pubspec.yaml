@@ -10,6 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  shared_preferences: any
 
 
   cupertino_icons: ^0.1.2
@@ -20,7 +21,6 @@ dependencies:
   provider: ^4.1.3
   rxdart: ^0.24.1
   table_calendar: ^2.2.1
-  shared_preferences: ^0.5.4+5
 
 dev_dependencies:
   flutter_test:
