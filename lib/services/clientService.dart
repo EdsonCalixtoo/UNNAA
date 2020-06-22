@@ -1,11 +1,12 @@
 import 'package:UNNA/models/clientModel.dart';
+import 'package:UNNA/screens/Login.dart';
 import 'package:UNNA/screens/feed_screen.dart';
 import 'package:UNNA/util/util.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../Login.dart';
+
 
 class ClientService {
   Dio dio = new Dio();

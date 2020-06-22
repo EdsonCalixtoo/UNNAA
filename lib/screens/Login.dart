@@ -1,8 +1,8 @@
+import 'package:UNNA/models/clientModel.dart';
 import 'package:UNNA/services/clientService.dart';
 import 'package:flutter/material.dart';
-import 'package:UNNA/screens/feed_screen.dart';
+
 import 'Cadastro.dart';
-import 'models/clientModel.dart';
 
 class Login extends StatefulWidget {
   @override
