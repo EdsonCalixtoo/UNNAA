@@ -74,12 +74,6 @@ class _FeedScreenState extends State<FeedScreen> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    subtitle: Text(posts[index].timeAgo),
-                    trailing: IconButton(
-                      icon: Icon(Icons.more_horiz),
-                      color: Colors.black,
-                      onPressed: () => print('More'),
-                    ),
                   ),
                   InkWell(
                     onDoubleTap: () => print('Like post'),
